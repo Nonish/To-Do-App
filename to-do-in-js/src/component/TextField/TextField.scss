@@ -1,0 +1,74 @@
+@import "../../styles/variables";
+
+.text-field {
+  width: 100%;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  outline: none;
+  border: 2px solid;
+  border-radius: 8px;
+  background-color: $plain;
+  border-color: $primary;
+
+  &:focus {
+    border-color: $grey-light;
+  }
+  &::-webkit-input-placeholder {
+    color: $grey-light;
+    font-style: italic;
+  }
+}
+
+//:::function with params = color,focus ::::
+// @mixin placeholder-color($color, $focus) {
+//   &::-webkit-input-placeholder {
+//     /* WebKit, Blink, Edge */
+//     color: $color;
+//     &:focus {
+//       &::-webkit-input-placeholder {
+//         /* WebKit, Blink, Edge */
+//         color: $focus;
+//       }
+//     }
+//   }
+//   &:-moz-placeholder {
+//     /* Mozilla Firefox 4 to 18 */
+//     color: $color;
+//     opacity: 1;
+//     &:focus {
+//       &:-moz-placeholder {
+//         /* Mozilla Firefox 4 to 18 */
+//         color: $focus;
+//         opacity: 1;
+//       }
+//     }
+//   }
+//   &::-moz-placeholder {
+//     /* Mozilla Firefox 19+ */
+//     color: $color;
+//     opacity: 1;
+//     &:focus {
+//       &::-moz-placeholder {
+//         /* Mozilla Firefox 19+ */
+//         color: $focus;
+//         opacity: 1;
+//       }
+//     }
+//   }
+//   &:-ms-input-placeholder {
+//     /* Internet Explorer 10-11 */
+//     color: $color;
+//     &:focus {
+//       &:-ms-input-placeholder {
+//         /* Internet Explorer 10-11 */
+//         color: $focus;
+//       }
+//     }
+//   }
+// }
+
+//:::function apply:::
+// .input--text {
+//   @include placeholder-color(red, blue);
+// }

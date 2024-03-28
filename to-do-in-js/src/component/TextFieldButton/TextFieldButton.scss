@@ -1,0 +1,53 @@
+@import "../../styles/variables";
+
+.basic-btn {
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  padding: 0.6em 1em;
+  border: 1px solid $plain;
+  border-radius: 8px;
+  transition: border-color 0.25s;
+}
+
+.add-btn-interaction {
+  border-color: $primary;
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.remove-btn-interaction {
+  border-color: $secondary;
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.remove-btn {
+  @extend .basic-btn;
+  background-color: $secondary;
+  margin-left: 1rem;
+
+  &:hover {
+    @extend .remove-btn-interaction;
+  }
+  &:focus {
+    @extend .remove-btn-interaction;
+  }
+  &:focus-visible {
+    @extend .remove-btn-interaction;
+  }
+}
+
+.add-btn {
+  @extend .basic-btn;
+  background-color: $primary;
+
+  &:hover {
+    @extend .add-btn-interaction;
+  }
+  &:focus {
+    @extend .add-btn-interaction;
+  }
+  &:focus-visible {
+    @extend .add-btn-interaction;
+  }
+}
