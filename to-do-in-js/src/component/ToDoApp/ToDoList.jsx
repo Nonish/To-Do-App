@@ -1,11 +1,11 @@
 /* eslint-disable no-irregular-whitespace */
 import { useContext } from "react";
 import { TodoListContext } from "../../context";
-import TextFieldButton from "../TextFieldButton";
+import ToDoCard from "./ToDoCard";
 import './ToDoApp.scss'
 
 const TodoList = () => {
-   const { todoList, removeTodoItem, markAsCompleted } = useContext(TodoListContext);
+   const { todoList } = useContext(TodoListContext);
 
    // ::: useContext(TodoListContext):::
    // addTodoItem: function addTodoItem(todoItemLabel)​
@@ -15,29 +15,17 @@ const TodoList = () => {
 
    return (
       <div className="lower-wrapper">
-         {todoList.length ? <ul>
-            {todoList.map((todoItem) => (
-               <li
-                  className={`todoItem ${todoItem.completed ? "completed" : ""}`}
-                  key={todoItem.id}
-                  onClick={() => markAsCompleted(todoItem.id)}
-               >
-                  {todoItem.label}
-                  <TextFieldButton className="remove-btn" onClick={() => removeTodoItem(todoItem.id)}>
-                     &#10006;
-                  </TextFieldButton>
-
-                  {/* <button
-                     className="delete"
-                     onClick={() => removeTodoItem(todoItem.id)}
-                  >
-
-                  </button> */}
-               </li>
-            ))}
-         </ul>
-            :
-            <h2>No Data</h2>
+         {
+            todoList.length ?
+               <div className="card-wrapper">
+                  {todoList.slice(0).reverse().map((todoItem) => (
+                     <ToDoCard
+                        data={todoItem}
+                        key={todoItem?.id}
+                     />))}
+               </div>
+               :
+               <h2>Add to-do item to see here...</h2>
          }
       </div>
    );

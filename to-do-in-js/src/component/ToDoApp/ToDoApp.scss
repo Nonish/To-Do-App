@@ -30,3 +30,49 @@
 .upper-wrapper {
   @extend .wrapper;
 }
+
+.card-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  width: 100%;
+  min-height: 150px;
+  padding: 0.5em 0.5em;
+  font-size: 1em;
+  font-weight: 500;
+  outline: none;
+  border: 2px solid;
+  border-radius: 8px;
+  background-color: $plain;
+  border-color: $primary;
+  &:hover {
+    border-color: $grey-light;
+    cursor: pointer;
+  }
+}
+
+.upper-card {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lower-card {
+  font-size: 1.5em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  cursor: text;
+  height: auto;
+  > p {
+    word-break: break-all;
+  }
+}
+
+.checked {
+  text-decoration: line-through;
+}

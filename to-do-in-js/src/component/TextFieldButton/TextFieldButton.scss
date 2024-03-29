@@ -21,10 +21,33 @@
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.check-btn-interaction {
+  border-color: $tertiary;
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.check-btn {
+  @extend .basic-btn;
+  background-color: $tertiary;
+  padding: 0.4em 0.8em;
+  margin-left: 0.5rem;
+
+  &:hover {
+    @extend .check-btn-interaction;
+  }
+  &:focus {
+    @extend .check-btn-interaction;
+  }
+  &:focus-visible {
+    @extend .check-btn-interaction;
+  }
+}
+
 .remove-btn {
   @extend .basic-btn;
   background-color: $secondary;
-  margin-left: 1rem;
+  padding: 0.4em 0.8em;
+  margin-left: 0.5rem;
 
   &:hover {
     @extend .remove-btn-interaction;

@@ -4,6 +4,7 @@ import { TodoListContext } from "../../context";
 import TextField from "../TextField";
 import TextFieldButton from "../TextFieldButton";
 import './ToDoApp.scss'
+import toast from "react-hot-toast";
 
 const AddTodo = () => {
    const [inputValue, setInputValue] = useState("");
@@ -16,7 +17,7 @@ const AddTodo = () => {
    // todoList: Array []
 
    const onHandleAdd = () => {
-      if (!inputValue) return alert("Value can't be empty !!!")
+      if (!inputValue) return toast.error("Value can't be empty !!!");
       addTodoItem(inputValue);
       setInputValue("");
    }
@@ -26,7 +27,7 @@ const AddTodo = () => {
          <TextField
             type="text"
             value={inputValue}
-            placeholder={"Type and add todo item"}
+            placeholder={"Type and add todo item..."}
             onChange={(e) => setInputValue(e.target.value)}
          />
          <TextFieldButton className={'add-btn'} onClick={onHandleAdd}>
