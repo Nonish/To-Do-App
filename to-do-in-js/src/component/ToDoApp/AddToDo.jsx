@@ -10,11 +10,11 @@ const AddTodo = () => {
    const [inputValue, setInputValue] = useState("");
    const { addTodoItem } = useContext(TodoListContext);
 
-   // ::: useContext(TodoListContext):::
-   // addTodoItem: function addTodoItem(todoItemLabel)​
-   // markAsCompleted: function markAsCompleted(todoItemId)​
-   // removeTodoItem: function removeTodoItem(todoItemId)​
-   // todoList: Array []
+      // ::: useContext(TodoListContext):::
+      // addTodoItem: function addTodoItem(todoItemLabel)​
+      // markAsCompleted: function markAsCompleted(todoItemId)​
+      // removeTodoItem: function removeTodoItem(todoItemId)​
+      // todoList: Array []
 
    const onHandleAdd = () => {
       if (!inputValue) return toast.error("Value can't be empty !!!");
